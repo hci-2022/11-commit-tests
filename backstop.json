@@ -1,0 +1,88 @@
+{
+  "id": "backstop_default",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "label": "tablet",
+      "width": 1024,
+      "height": 768
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "Empty post form",
+      "url": "http://localhost:8080/",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Correct, completed post form",
+      "url": "http://localhost:8080/",
+      "keyPressSelectors": [
+        {
+          "selector": "#title",
+          "keyPress": "My test post title"
+        },
+        {
+          "selector": "#content",
+          "keyPress": "My test post content."
+        }
+      ],
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Incorrect, completed post form",
+      "url": "http://localhost:8080/",
+      "keyPressSelectors": [
+        {
+          "selector": "#title",
+          "keyPress": "Oh"
+        },
+        {
+          "selector": "#content",
+          "keyPress": "My"
+        }
+      ],
+      "clickSelector": "#title",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Submitted correct form data",
+      "url": "http://localhost:8080/",
+      "keyPressSelectors": [
+        {
+          "selector": "#title",
+          "keyPress": "My test post title"
+        },
+        {
+          "selector": "#content",
+          "keyPress": "My test post content."
+        }
+      ],
+      "clickSelector": "button[type='submit']",
+      "misMatchThreshold" : 0.1
+    }
+
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

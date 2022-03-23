@@ -1,0 +1,25 @@
+{
+  "name": "09-form-behavior",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hci-2022/09-form-behavior.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hci-2022/09-form-behavior/issues"
+  },
+  "homepage": "https://github.com/hci-2022/09-form-behavior#readme",
+  "devDependencies": {
+    "backstopjs": "^6.0.4",
+    "chromedriver": "^99.0.0",
+    "geckodriver": "^3.0.1",
+    "nightwatch": "^2.0.10"
+  }
+}
