@@ -20,6 +20,7 @@
     "backstopjs": "^6.0.4",
     "chromedriver": "^99.0.0",
     "geckodriver": "^3.0.1",
+    "htmllint-cli": "^0.0.7",
     "nightwatch": "^2.0.10"
   }
 }
