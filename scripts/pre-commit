@@ -1,0 +1,1 @@
+echo "I will run before ANY commit you try to make!!!"
